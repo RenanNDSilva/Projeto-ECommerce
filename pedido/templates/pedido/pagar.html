@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Pagamento | {% endblock %}
+
+{% load omfilters %}
+{% load static %}
+
+{% block conteudo %}
+<div class="row">
+    <div class="col">
+        <h3>Escolha o método de pagamento</h3>
+        <label for="pix">Pix</label>
+        <input type="radio" name="metodo_pagamento" id="pix">
+        <br>
+        <label for="cartao_credito">Cartão de Crédito</label>
+        <input type="radio" name="metodo_pagamento" id="cartao_credito">
+        <br>
+        <label for="cartao_debito">Cartão de Débito</label>
+        <input type="radio" name="metodo_pagamento" id="cartao_debito">
+        <br>
+        <label for="paypal">Paypal</label>
+        <input type="radio" name="metodo_pagamento" id="paypal">
+    </div>
+</div>
+
+{% include 'parciais/_pedido.html' %}
+
+<div class="row mt-4">
+    <div class="col">
+        <a href="#" class="btn btn-primary btn-block btn-lg">Pagar</a>
+    </div>
+</div>
+
+
+{% endblock %}

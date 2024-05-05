@@ -1,0 +1,37 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}InfoKey</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.jpeg' %}"/>
+</head>
+<style>
+    .bg-primary {
+        background: black !important;
+    }
+    .btn-primary {
+        background: black !important;
+        border-color: black !important;
+    }
+    .page-item.active, .page-link {
+        background-color: black !important;
+        border-color: black !important;
+        color: white !important;
+    }
+</style>
+<body>
+    {% include 'parciais/_nav.html' %}
+
+    <main class="container mt-4 mb-4">
+        {% include 'parciais/_messages.html' %}
+        {% block conteudo %}{% endblock %}
+    </main>
+
+{% include 'parciais/_footer.html' %}
+
+</body>
+
+</html>
